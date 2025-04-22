@@ -10,13 +10,15 @@ import UIKit
 class ViewController: UIViewController {
     
     // MARK - IB OUTLETS
-    
-    
-    
-    // MARK: - Instance Properties
-    
+    @IBOutlet weak var signLabel: UILabel!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var rockButton: UIButton!
+    @IBOutlet weak var paperButton: UIButton!
+    @IBOutlet weak var scissorsButton: UIButton!
+    @IBOutlet weak var playAgainButton: UIButton!
     
     // MARK: - VDL
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,10 +26,50 @@ class ViewController: UIViewController {
     }
     
     // MARK: IB Action
-    
+    @IBAction func rockChosen(_ sender: Any) {
+    }
+    @IBAction func paperChosen(_ sender: Any) {
+    }
+    @IBAction func scissorsChosen(_ sender: Any) {
+    }
+    @IBAction func playAgain(_ sender: Any) {
+    }
     
     // MARK: - Instance Methods
+    func updateUI(forState state: GameState) {
+        statusLabel.text = state.status
+        
+        switch state {
+        case .start:
+            view.backgroundColor = .lightGray
+            
+            signLabel.text = "👽"
+            playAgainButton.isHidden = true
+            
+            rockButton.isHidden = false
+            paperButton.isHidden = false
+            scissorsButton.isHidden = false
+            
+            rockButton.isEnabled = true
+            paperButton.isEnabled = true
+            scissorsButton.isEnabled = true
+            
+        case .win:
+            view.backgroundColor = UIColor(red: 0.651, green: 0.792, blue: 0.651, alpha: 1)
+        case .lose:
+            view.backgroundColor = UIColor(red: 0.851, green: 0.424, blue: 0.412, alpha: 1)
+        case .draw:
+            view.backgroundColor = UIColor(red: 0.663, green: 0.663, blue: 0.663, alpha: 1)
+        }
+    }
     
+    func play(userSign: Sign) {
+        let computerSign = randomSign()
+        
+        let gameState = userSign.gameState(against: computerSign)
+        updateUI(forState: gameState)
+        
+    }
 
 }
 

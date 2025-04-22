@@ -23,6 +23,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="🪨">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="70"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="rockChosen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F93-Ky-2c7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFG-IA-3sC">
                                 <rect key="frame" x="148" y="368" width="99" height="115"/>
@@ -31,6 +34,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="📄">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="70"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="paperChosen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5pH-To-eW7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6V-JE-YLn">
                                 <rect key="frame" x="268" y="369" width="99" height="115"/>
@@ -39,14 +45,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="✂️">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="70"/>
                                 </buttonConfiguration>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tjV-Hf-PWn">
-                                <rect key="frame" x="124" y="574" width="151" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Play Again">
-                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
-                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="scissorsChosen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fir-Sq-gM7"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5I3-4w-yLY">
                                 <rect key="frame" x="26" y="283" width="341" height="34"/>
@@ -56,16 +57,35 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qkb-Rf-XRa">
-                                <rect key="frame" x="118" y="159" width="162" height="84"/>
+                                <rect key="frame" x="117" y="145" width="162" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tjV-Hf-PWn">
+                                <rect key="frame" x="122" y="611" width="151" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Play Again">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="playAgain:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P8R-Hj-foW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="paperButton" destination="CFG-IA-3sC" id="sr7-wq-Jlr"/>
+                        <outlet property="playAgainButton" destination="tjV-Hf-PWn" id="72s-Rl-xRS"/>
+                        <outlet property="rockButton" destination="Gtf-5Y-pSV" id="OjO-4P-0XE"/>
+                        <outlet property="scissorsButton" destination="L6V-JE-YLn" id="lxU-Ds-ksa"/>
+                        <outlet property="signLabel" destination="Qkb-Rf-XRa" id="uqr-QO-zhH"/>
+                        <outlet property="statusLabel" destination="5I3-4w-yLY" id="hQT-q3-1F0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
